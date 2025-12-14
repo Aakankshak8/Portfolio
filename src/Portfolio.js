@@ -1,6 +1,6 @@
 // Portfolio.jsx
 import React, { useEffect, useState, useCallback } from "react";
-import { Github, Linkedin, Instagram, Download, Moon, Sun, X, Bot } from "lucide-react"; // added Bot icon
+import { Github, Linkedin, Instagram, Download, Moon, Sun, X, } from "lucide-react"; // added Bot icon
 import "./Portfolio.css";
 
 export default function Portfolio() {
@@ -69,7 +69,10 @@ export default function Portfolio() {
     <div>
       {/* Navbar */}
       <nav className="navbar">
-        <a href="#" className="logo">Aakanksha</a>
+        <a href="https://aakankshak8.github.io/portfolio" target="_blank" rel="noopener noreferrer" className="logo">
+  Aakanksha
+</a>
+
         <div className="nav-links">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
@@ -121,9 +124,7 @@ export default function Portfolio() {
           Immediate joiner seeking growth-oriented opportunities where I can build reliable, user-centered products.
         </p>
         {/* Added Copilot */}
-        <div className="copilot-card reveal-up delay-2">
-          <Bot size={20} /> <strong>Copilot</strong> — My AI companion that helps me learn, debug, and polish my projects.
-        </div>
+        {/* s */}
       </section>
 
       {/* Skills */}
