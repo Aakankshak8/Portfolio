@@ -120,17 +120,18 @@ export default function Portfolio() {
       </section>
 
       {/* Skills */}
-      <section id="skills" className="section">
-        <h2 className="section-title reveal-up">Skills</h2>
-        <ul className="skills-list reveal-grid">
-          {skills.map((skill) => (
-            <li key={skill} className="skill-card">
-              <span className="skill-dot" />
-              {skill}
-            </li>
-          ))}
-        </ul>
-      </section>
+<section id="skills" className="section">
+  <h2 className="section-title reveal-up">Skills</h2>
+  <div className="skills-grid reveal-grid">
+    {skills.map((skill) => (
+      <div key={skill} className="skill-card">
+        <span className="skill-dot" />
+        {skill}
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* Projects */}
       <section id="projects" className="section soft-bg">
