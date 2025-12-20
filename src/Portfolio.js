@@ -48,7 +48,7 @@ export default function Portfolio() {
       title: "Online Ambulance Booking System",
       desc: "Emergency booking platform with live ambulance tracking and secure patient-side requests.",
       github: "https://github.com/Aakankshak8/Online-Ambulance-Booking-System1",
-      paper: "https://drive.google.com/file/d/1O5KdpZnrUq048wvIjwlKgdMQGUwgBjAV/view?usp=sharing", // ✅ valid link
+      paper: "https://drive.google.com/file/d/1O5KdpZnrUq048wvIjwlKgdMQGUwgBjAV/view?usp=sharing",
     },
     {
       title: "Crop Yield Prediction",
@@ -61,7 +61,9 @@ export default function Portfolio() {
     },
   ];
 
-  const skills = ["HTML", "CSS", "JavaScript", "ReactJS", "Java", "SQL", "C++", "C Programming", ".NET"];
+  const skills = [
+    "HTML", "CSS", "JavaScript", "ReactJS", "Java", "SQL", "C++", "C Programming", ".NET"
+  ];
 
   return (
     <div>
@@ -70,7 +72,6 @@ export default function Portfolio() {
         <a href="https://aakankshak8.github.io/portfolio" target="_blank" rel="noopener noreferrer" className="logo">
           Aakanksha
         </a>
-
         <div className="nav-links">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
@@ -108,6 +109,28 @@ export default function Portfolio() {
           </div>
         </div>
       </header>
+
+      {/* About */}
+      <section id="about" className="section soft-bg">
+        <h2 className="section-title reveal-up">About me</h2>
+        <p className="center-text reveal-up delay-1">
+          Computer Science graduate with a strong interest in Web Development and Software Engineering.
+          Immediate joiner seeking growth-oriented opportunities where I can build reliable, user-centered products.
+        </p>
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="section">
+        <h2 className="section-title reveal-up">Skills</h2>
+        <ul className="skills-list reveal-grid">
+          {skills.map((skill) => (
+            <li key={skill} className="skill-card">
+              <span className="skill-dot" />
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </section>
 
       {/* Projects */}
       <section id="projects" className="section soft-bg">
