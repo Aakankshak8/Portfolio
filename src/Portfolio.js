@@ -1,24 +1,24 @@
 // Portfolio.jsx
 import React, { useEffect, useState, useCallback } from "react";
-import { Github, Linkedin, Instagram, Download, Moon, Sun, X } from "lucide-react";
+import { Github, Linkedin, Instagram, Download, Moon, Sun, X, } from "lucide-react"; // added Bot icon
 import "./Portfolio.css";
 
 export default function Portfolio() {
   const [dark, setDark] = useState(false);
   const [modal, setModal] = useState(null);
 
-  // Initialize theme
+  // Initialize theme from localStorage or system preference
   useEffect(() => {
     const stored = localStorage.getItem("theme");
     if (stored) {
       setDark(stored === "dark");
     } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
       setDark(prefersDark);
     }
   }, []);
 
-  // Apply theme
+  // Apply theme class to body and persist
   useEffect(() => {
     document.body.classList.toggle("dark", dark);
     localStorage.setItem("theme", dark ? "dark" : "light");
@@ -48,7 +48,7 @@ export default function Portfolio() {
       title: "Online Ambulance Booking System",
       desc: "Emergency booking platform with live ambulance tracking and secure patient-side requests.",
       github: "https://github.com/Aakankshak8/Online-Ambulance-Booking-System1",
-      paper: "https://drive.google.com/file/d/your-paper-id/view", // ✅ replace with valid Google Drive/Docs link
+      paper: "https://share.google/tHDwc0GQLyArP9693",
     },
     {
       title: "Crop Yield Prediction",
@@ -61,15 +61,18 @@ export default function Portfolio() {
     },
   ];
 
-  const skills = ["HTML", "CSS", "JavaScript", "ReactJS", "Java", "SQL", "C++", "C Programming", ".NET"];
+  const skills = [
+    "HTML", "CSS", "JavaScript", "ReactJS", "Java", "SQL", "C++", "C Programming", ".NET"
+  ];
 
   return (
     <div>
       {/* Navbar */}
       <nav className="navbar">
         <a href="https://aakankshak8.github.io/portfolio" target="_blank" rel="noopener noreferrer" className="logo">
-          Aakanksha
-        </a>
+  Aakanksha
+</a>
+
         <div className="nav-links">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
@@ -89,23 +92,28 @@ export default function Portfolio() {
       <header className="hero">
         <div className="hero-inner">
           <h1 className="reveal-up">Aakanksha Karale</h1>
-          <p className="reveal-up delay-1">• Student at IET C-DAC ACTS ATC, Pune • Computer Science & Engineering • Web Developer Intern</p>
+          <p className="reveal-up delay-1"> •Student at IET C-DAC ACTS ATC, Pune •Computer Science & Engineering • Web Developer Intern</p>
 
           <div className="hero-cta reveal-up delay-2">
-            <a href="https://github.com/Aakankshak8" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-btn github">
+            <a href="https://github.com/Aakankshak8" target="_blank" rel="noreferrer" aria-label="GitHub" className="social-btn github">
               <Github size={18} /> GitHub
             </a>
-            <a href="https://www.linkedin.com/in/aakanksha-karale-437060266" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-btn linkedin">
+            <a href="https://www.linkedin.com/in/aakanksha-karale-437060266" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="social-btn linkedin">
               <Linkedin size={18} /> LinkedIn
             </a>
-            <a href="https://www.instagram.com/Aakanksha_Karale_5279/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-btn instagram">
+            <a href="https://www.instagram.com/Aakanksha_Karale_5279/" target="_blank" rel="noreferrer" aria-label="Instagram" className="social-btn instagram">
               <Instagram size={18} /> Instagram
             </a>
-            <a href="https://drive.google.com/file/d/1O5KdpZnrUq048wvIjwlKgdMQGUwgBjAV/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="primary-btn">
+            <a href="https://drive.google.com/file/d/1O5KdpZnrUq048wvIjwlKgdMQGUwgBjAV/view?usp=drive_link" target="_blank" rel="noreferrer" className="primary-btn">
               <Download size={16} /> Resume
             </a>
           </div>
         </div>
+
+        {/* Decorative orbs */}
+        <div className="orb orb-1" aria-hidden="true" />
+        <div className="orb orb-2" aria-hidden="true" />
+        <div className="orb orb-3" aria-hidden="true" />
       </header>
 
       {/* About */}
@@ -115,6 +123,8 @@ export default function Portfolio() {
           Computer Science graduate with a strong interest in Web Development and Software Engineering.
           Immediate joiner seeking growth-oriented opportunities where I can build reliable, user-centered products.
         </p>
+        {/* Added Copilot */}
+        {/* s */}
       </section>
 
       {/* Skills */}
@@ -163,12 +173,12 @@ export default function Portfolio() {
             <p className="modal-text">{modal.desc}</p>
             <div className="modal-links">
               {modal.github && (
-                <a className="modal-link" href={modal.github} target="_blank" rel="noopener noreferrer">
+                <a className="modal-link" href={modal.github} target="_blank" rel="noreferrer">
                   <Github size={16} /> GitHub Repo
                 </a>
               )}
               {modal.paper && (
-                <a className="modal-link" href={modal.paper} target="_blank" rel="noopener noreferrer">
+                <a className="modal-link" href={modal.paper} target="_blank" rel="noreferrer">
                   📄 Published Paper
                 </a>
               )}

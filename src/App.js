@@ -1,11 +1,10 @@
-
-import './App.css';
+// src/App.js
 import Portfolio from './Portfolio';
 
 function App() {
   return (
     <>
-    <Portfolio/>
+      <Portfolio />
     </>
   );
 }
